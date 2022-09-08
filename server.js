@@ -20,13 +20,13 @@ var imagekit = new ImageKit({
 });
 
 app.get('/uploadImages', function(req, res) {
-    res.setHeader("Access-Control-Allow-Origin", "https://imagekit-uploads.herokuapp.com/uploadImages");
+    res.setHeader("Access-Control-Allow-Origin", "https://www.thegivingkind.co.uk");
     var authenticationParameters = imagekit.getAuthenticationParameters();
     res.send(authenticationParameters);
 })
 
 app.post('/deleteImage',function(req,res){
-    res.setHeader("Access-Control-Allow-Origin", "https://imagekit-uploads.herokuapp.com/deleteImage");
+    res.setHeader("Access-Control-Allow-Origin", "https://www.thegivingkind.co.uk");
     var fileId = req.body.fileId;
     imagekit.deleteFile(fileId, function(error, result) {
         if(!error){
