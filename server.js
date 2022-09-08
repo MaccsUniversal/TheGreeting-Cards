@@ -6,7 +6,7 @@ const { response, request } = require('express');
 const https = require('https');
 const app = express();
 require('dotenv').config({path: './IMAGEKIT_KEYS.env'});
-const PORT = 8000;
+const PORT = process.env.PORT|| 5000;
 // Requiring file system to use local files
 const fs = require("fs");
 
