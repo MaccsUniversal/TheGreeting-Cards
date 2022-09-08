@@ -20,13 +20,13 @@ var imagekit = new ImageKit({
 });
 
 app.get('/uploadImages', function(req, res) {
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.setHeader("Access-Control-Allow-Origin", "https://imagekit-uploads.herokuapp.com/uploadImages");
     var authenticationParameters = imagekit.getAuthenticationParameters();
     res.send(authenticationParameters);
 })
 
 app.post('/deleteImage',function(req,res){
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.setHeader("Access-Control-Allow-Origin", "https://imagekit-uploads.herokuapp.com/deleteImage");
     var fileId = req.body.fileId;
     imagekit.deleteFile(fileId, function(error, result) {
         if(!error){
